@@ -1,5 +1,3 @@
-# gemini-4-argon-developer-guide
-A developer guide to Google Gemini 4 Argon, API setup, pricing, reasoning capabilities and integration best practices.
 # Google Gemini 4 Argon: A Practical Developer Guide to API Integration, Pricing and Real-World Use Cases
 
 **Updated: October 14, 2026**
@@ -30,7 +28,7 @@ That makes it potentially useful in situations where an ordinary text-only inter
 
 ### A large context window
 
-Gemini 4 Argon supports a unified context window of up to 1,048,576 tokens.
+Gemini 4 Argon supports a unified context window of up to 1,048,576 tokens. Its normal synchronous maximum output is 65,536 tokens; a separate long-decode option supports output up to 1,048,576 tokens. The context-window figure should not be mistaken for the default response limit.
 
 This creates opportunities to analyze substantial technical documents, long conversations, multiple source files and connected workflows within a single model context.
 
@@ -80,7 +78,7 @@ Never place API keys directly inside a public GitHub repository.
 
 ### Step 2: Install the official SDK
 
-For Python, install or update the Google Gen AI SDK.
+For Python, install or update the Google Gen AI SDK. This repository includes a minimal [Python example](examples/basic_request.py) and a [requirements file](requirements.txt). See the [Quickstart](#quickstart-working-python-example) below for instructions.
 
 Google's launch documentation specifies version 2.30.1 or newer for its Gemini 4 Argon Python quickstart.
 
@@ -115,6 +113,17 @@ For readers who want a broader introduction covering Gemini subscriptions, setup
 [How to Use Gemini 4 Argon: Plans, Price and Setup Guide](https://nexploreinfo.com/how-to-use-gemini-4-argon/)
 
 That guide focuses on getting access to the model and understanding the available options, while this GitHub resource focuses on practical developer considerations.
+
+## Quickstart: Working Python Example
+
+This repository includes a minimal API call you can run locally using Google's Gen AI SDK and the Interactions API.
+
+1. Use Python 3.10 or newer and create a virtual environment if desired.
+2. Install dependencies: `python -m pip install -r requirements.txt`.
+3. Set your `GEMINI_API_KEY` environment variable to your API key from [Google AI Studio](https://aistudio.google.com/). Do not commit the key or a `.env` file.
+4. Run `python examples/basic_request.py`.
+
+The sample prints a short explanation of a Python programming concept. It requires valid access to the model and may incur API charges. This sample has been syntax-checked, but no live API response has been claimed.
 
 ## 4. Gemini 4 Argon API Pricing
 
